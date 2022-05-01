@@ -4,17 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python 常用命令备忘录, My Third Universe">
-    <meta name="description" content="
-将常用的python命令汇总，作为备忘录，留待日后查询使用。
+    <meta name="keywords" content="MacOS常用命令备忘录, My Third Universe">
+    <meta name="description" content="Time Machine1. 查看本地备份快照tmutil listlocalsnapshots [mount_point]
 
-提示: 将不定期持续更新
-
-一、pip命令1 、安装/卸载单个包pip install &amp;lt;name&amp;gt;
-
-pip uninstall &amp;lt;name&amp;gt;
-
-2">
+   List the creation dates of all local Time Machine sna">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +21,7 @@ pip uninstall &amp;lt;name&amp;gt;
 
     
 
-    <title>Python 常用命令备忘录 | My Third Universe</title>
+    <title>MacOS常用命令备忘录 | My Third Universe</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -298,12 +291,12 @@ pip uninstall &amp;lt;name&amp;gt;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python 常用命令备忘录</h1>
+                    <h1 class="description center-align post-title">MacOS常用命令备忘录</h1>
                 </div>
             </div>
         </div>
@@ -419,12 +412,12 @@ pip uninstall &amp;lt;name&amp;gt;
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/MacOS/">
+                                <span class="chip bg-color">MacOS</span>
                             </a>
                         
-                            <a href="/tags/pip/">
-                                <span class="chip bg-color">pip</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -435,8 +428,8 @@ pip uninstall &amp;lt;name&amp;gt;
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/MacOS/" class="post-category">
+                                MacOS
                             </a>
                         
                     </div>
@@ -448,28 +441,28 @@ pip uninstall &amp;lt;name&amp;gt;
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-28
+                    2022-05-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-29
+                    2022-05-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    808
+                    92
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -492,95 +485,14 @@ pip uninstall &amp;lt;name&amp;gt;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>将常用的python命令汇总，作为备忘录，留待日后查询使用。</p>
-</blockquote>
-<p><code>提示: 将不定期持续更新</code></p>
-<hr>
-<h2 id="一、pip命令"><a href="#一、pip命令" class="headerlink" title="一、pip命令"></a>一、pip命令</h2><h3 id="1-、安装-x2F-卸载单个包"><a href="#1-、安装-x2F-卸载单个包" class="headerlink" title="1 、安装/卸载单个包"></a>1 、安装/卸载单个包</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="Time-Machine"><a href="#Time-Machine" class="headerlink" title="Time Machine"></a>Time Machine</h2><h3 id="1-查看本地备份快照"><a href="#1-查看本地备份快照" class="headerlink" title="1. 查看本地备份快照"></a>1. 查看本地备份快照</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmutil listlocalsnapshots <span class="token punctuation">[</span>mount_point<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip uninstall <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>   List the creation dates of all local Time Machine snapshots.</p>
+<p>   Specify mount_point to list snapshot creation dates from a specific volume.</p>
+<p>   Listed dates are formatted YYYY-MM-DD-HHMMSS.</p>
+<h3 id="2-删除本地快照"><a href="#2-删除本地快照" class="headerlink" title="2. 删除本地快照"></a>2. 删除本地快照</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmutil deletelocalsnapshots <span class="token punctuation">{</span>mount_point <span class="token operator">|</span> date<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="2、查询可更新的包"><a href="#2、查询可更新的包" class="headerlink" title="2、查询可更新的包"></a>2、查询可更新的包</h3><p>　　下列三条命令等效：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip list -O <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip list --outdated<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip-review<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><code>注：关于 pip-review 详见下文</code></p>
-<h3 id="3、更新单个包"><a href="#3、更新单个包" class="headerlink" title="3、更新单个包"></a>3、更新单个包</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> --upgrade <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="4、同时更新所有包"><a href="#4、同时更新所有包" class="headerlink" title="4、同时更新所有包"></a>4、同时更新所有包</h3><p>(1) 安装 pip-review 包，已安装请忽略该步骤；</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> pip-review<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2) 执行：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip-review -i<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>该命令可自动检索可更新的包，然后交互执行更新，即更新前会询问是否确认更新，如下图所示：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ pip-review -i 
-<span class="token assign-left variable">mistune</span><span class="token operator">==</span><span class="token number">2.0</span>.2 is availiable <span class="token punctuation">(</span>you have <span class="token number">0.8</span>.4<span class="token punctuation">)</span>
-Upgrade now? <span class="token punctuation">[</span>Y<span class="token punctuation">]</span>es, <span class="token punctuation">[</span>N<span class="token punctuation">]</span>o, <span class="token punctuation">[</span>A<span class="token punctuation">]</span>ll, <span class="token punctuation">[</span>Q<span class="token punctuation">]</span>uit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="5、卸载全部包或部分包"><a href="#5、卸载全部包或部分包" class="headerlink" title="5、卸载全部包或部分包"></a>5、卸载全部包或部分包</h3><p>(1) 在某目录下，创建一个文件 pkglist.txt（名字可更换）；</p>
-<p>(2) 在该目录下，打开命令行窗口，输入并执行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip freeze <span class="token operator">&gt;</span>pkglist.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>保持命令行窗口为打开状态；</p>
-<p>(3) 此时，所有安装的第三方包名称都会保存到 pkglist.txt 文件里，编辑该文件，只保留想删除的包的名称；</p>
-<p>(4) 回到命令行窗口，输入</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip uninstall -r pkglist.txt --yes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>即可删除指定的所有包。</p>
-<hr>
-<h2 id="二、pip异常处理"><a href="#二、pip异常处理" class="headerlink" title="二、pip异常处理"></a>二、pip异常处理</h2><h3 id="1-No-module-named-pip"><a href="#1-No-module-named-pip" class="headerlink" title="1.No module named pip"></a>1.No module named pip</h3><p>适用于pip被误删的情况，只需依次执行如下命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python -m ensurepip
-pip <span class="token function">install</span> --upgrade pip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="2-ValueError-Unable-to-find-resource-t64-exe-in-package-pip-vendor-distlib"><a href="#2-ValueError-Unable-to-find-resource-t64-exe-in-package-pip-vendor-distlib" class="headerlink" title="2.ValueError: Unable to find resource t64.exe in package pip._vendor.distlib"></a>2.ValueError: Unable to find resource t64.exe in package pip._vendor.distlib</h3><p>执行以下命令予以解决：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python -m pip uninstall setuptools
-python -m pip <span class="token function">install</span> --upgrade setuptools<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<hr>
-<h2 id="三、虚拟环境配置"><a href="#三、虚拟环境配置" class="headerlink" title="三、虚拟环境配置"></a>三、虚拟环境配置</h2><h3 id="1、virtualenv"><a href="#1、virtualenv" class="headerlink" title="1、virtualenv"></a>1、virtualenv</h3><p>(1) 安装</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip instal virtualenv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>(2) 创建虚拟环境（环境名称可任意，此处以 name 为例）</p>
-<p>　　打开命令行窗口，切换到预选的文件夹路径，执行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">virtualenv name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><code>注：virtualenv --no-site-packages name 可创建一个不含任何第三方包的虚拟环境，否则默认复制base环境下的所有第三方包。</code></p>
-<p>(3) 激活环境</p>
-<p>　　命令行里切换到虚拟环境文件夹下，例如 …\name ， 执行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">.<span class="token punctuation">\</span>Scripts<span class="token punctuation">\</span>activate.bat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>激活环境之后，用pip安装的包都将只安装在虚拟环境文件夹里；</p>
-<p>(4) 退出环境</p>
-<p>　　类似(3)，输入执行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">.<span class="token punctuation">\</span>Scripts<span class="token punctuation">\</span>deactivate.bat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>注：上述内容适用于Windows系统下，Mac OS系统的虚拟环境激活命令为 </p>
-  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ./bin/activate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>退出虚拟环境的命令为</p>
-  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>其余一致。</p>
-</blockquote>
-<h3 id="2、venv"><a href="#2、venv" class="headerlink" title="2、venv"></a>2、venv</h3><p>　　python自带，不需要安装；</p>
-<p>　　使用方法与virtualenv类似，只需将创建虚拟环境的命令修改为：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python -m venv name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="3、-VScode中配置虚拟环境"><a href="#3、-VScode中配置虚拟环境" class="headerlink" title="3、 VScode中配置虚拟环境"></a>3、 VScode中配置虚拟环境</h3><p>　　(1) 打开VScode的设置面板，搜索“python venv path”，输入虚拟环境文件夹的路径;</p>
-<p>　　(2) 打开一个.py文件，在左下角（或右下角）选择解释器;</p>
-<p>　　(3) 此时虚拟环境里的解释器应该已经可以看到了。</p>
-<blockquote>
-<p>注：若在windows系统下的VScode终端用虚拟环境的解释器执行代码时，报错“无法加载文件 …ps1，因为在此系统上禁止运行脚本， …”，则解决方法为：</p>
-<p>　　(1) 以管理员身份运行windows powershell；</p>
-<p>　　(2) 执行 get-ExecutionPolicy，此时应该显示Restricted，表示状态禁止；</p>
-<p>　　(3) 接着执行 set-ExecutionPolicy RemoteSigned.</p>
-</blockquote>
+<p>   If a date is specified, delete all local Time Machine snapshots on all mounted disks for the specified date (formatted YYYY-MM-DD-HHMMSS).  If a disk is specified, delete all local Time Machine snapshots on the specified disk.</p>
 
                 
             </div>
@@ -607,7 +519,7 @@ python -m pip <span class="token function">install</span> --upgrade setuptools<s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xunhou0222.github.io/2022/04/28/2022-04-28-python-backup/">http://xunhou0222.github.io/2022/04/28/2022-04-28-python-backup/</a>
+                    <a href="http://xunhou0222.github.io/2022/05/01/macos-commonds/">http://xunhou0222.github.io/2022/05/01/macos-commonds/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,12 +557,12 @@ python -m pip <span class="token function">install</span> --upgrade setuptools<s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/MacOS/">
+                                    <span class="chip bg-color">MacOS</span>
                                 </a>
                             
-                                <a href="/tags/pip/">
-                                    <span class="chip bg-color">pip</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -1090,11 +1002,66 @@ python -m pip <span class="token function">install</span> --upgrade setuptools<s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/28/2022-04-29-how-to-bulid-this-blog/">
+                <a href="/2022/05/01/macos-commonds/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="MacOS常用命令备忘录">
+                        
+                        <span class="card-title">MacOS常用命令备忘录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MacOS/" class="post-category">
+                                    MacOS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MacOS/">
+                        <span class="chip bg-color">MacOS</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/28/how-to-bulid-this-blog/">
                     <div class="card-image">
                         
                         
@@ -1110,9 +1077,9 @@ python -m pip <span class="token function">install</span> --upgrade setuptools<s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1138,60 +1105,6 @@ python -m pip <span class="token function">install</span> --upgrade setuptools<s
                     
                     <a href="/tags/Blog/">
                         <span class="chip bg-color">Blog</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/04/28/2022-04-28-python-backup/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Python 常用命令备忘录">
-                        
-                        <span class="card-title">Python 常用命令备忘录</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/pip/">
-                        <span class="chip bg-color">pip</span>
                     </a>
                     
                 </div>
