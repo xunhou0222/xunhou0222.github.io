@@ -7,7 +7,8 @@
     <meta name="keywords" content="MacOS常用命令备忘录, My Third Universe">
     <meta name="description" content="Time Machine1. 查看本地备份快照tmutil listlocalsnapshots [mount_point]
 
-   List the creation dates of all local Time Machine sna">
+　　mount_point指的是容器（或者说是某个磁盘）。这条命令可以列出指定容器下的所有本地快照。
+　　一般我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -455,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    92
+                    139
                 </div>
                 
 
@@ -487,12 +488,13 @@
             <div id="articleContent">
                 <h2 id="Time-Machine"><a href="#Time-Machine" class="headerlink" title="Time Machine"></a>Time Machine</h2><h3 id="1-查看本地备份快照"><a href="#1-查看本地备份快照" class="headerlink" title="1. 查看本地备份快照"></a>1. 查看本地备份快照</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmutil listlocalsnapshots <span class="token punctuation">[</span>mount_point<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>   List the creation dates of all local Time Machine snapshots.</p>
-<p>   Specify mount_point to list snapshot creation dates from a specific volume.</p>
-<p>   Listed dates are formatted YYYY-MM-DD-HHMMSS.</p>
+<p>　　<code>mount_point</code>指的是容器（或者说是某个磁盘）。这条命令可以列出指定容器下的所有本地快照。</p>
+<p>　　一般我们常用下面这条命令，列出<code>当前磁盘</code>的本地快照：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmutil listlocalsnapshots /<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h3 id="2-删除本地快照"><a href="#2-删除本地快照" class="headerlink" title="2. 删除本地快照"></a>2. 删除本地快照</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tmutil deletelocalsnapshots <span class="token punctuation">{</span>mount_point <span class="token operator">|</span> date<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>   If a date is specified, delete all local Time Machine snapshots on all mounted disks for the specified date (formatted YYYY-MM-DD-HHMMSS).  If a disk is specified, delete all local Time Machine snapshots on the specified disk.</p>
+<p>　　如果指定<code>date</code>（格式为<code>YYYY-MM-DD-HHMMSS</code>），则删除创建于该日期的、位于所有磁盘的本地快照；如果指定<code>mount_point</code>为某个磁盘，则删除该磁盘上所有本地快照。</p>
 
                 
             </div>
