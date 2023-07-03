@@ -8,7 +8,7 @@
       <link href="/2023/07/03/matplotlib-zeng-jia-zi-ti/"/>
       <url>/2023/07/03/matplotlib-zeng-jia-zi-ti/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>Linux服务器或者MacOS电脑上使用matplotlib画图可能会遇到图片中文乱码问题，这往往是由于缺少相应的中文字体导致的。<br>本文将描述解决该问题的方法。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>Linux服务器或者MacOS电脑上使用matplotlib画图可能会遇到图片中文乱码问题，这往往是由于缺少相应的中文字体导致的。本文将描述解决该问题的方法。</p></blockquote>]]></content>
       
       
       <categories>
