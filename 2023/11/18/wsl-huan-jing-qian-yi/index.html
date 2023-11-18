@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python的包检索机制分析, My Third Universe">
+    <meta name="keywords" content="WSL环境迁移, My Third Universe">
     <meta name="description" content="
-python作为一门数据模型精心设计、具有高度一致性且十分具有哲学美感的编程语言，受到不同领域人士的喜爱。其庞大且活跃的开源社区、种类丰富的第三方包以及自带的功能强大的包管理工具更是锦上添花，让使用者可以用python解决各种门类的问题。">
+WSL是Windows Subsystem for Linux的缩写，即“适用于Linux的Windows子系统”。它可以使Windows系统不用安装虚拟机，也不用安装双系统，只要开启了WSL功能并下载安装一个Linux分发，即可使用Li">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
 
     
 
-    <title>Python的包检索机制分析 | My Third Universe</title>
+    <title>WSL环境迁移 | My Third Universe</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -290,12 +290,12 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python的包检索机制分析</h1>
+                    <h1 class="description center-align post-title">WSL环境迁移</h1>
                 </div>
             </div>
         </div>
@@ -411,12 +411,12 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/WSL/">
+                                <span class="chip bg-color">WSL</span>
                             </a>
                         
-                            <a href="/tags/pip/">
-                                <span class="chip bg-color">pip</span>
+                            <a href="/tags/Windows/">
+                                <span class="chip bg-color">Windows</span>
                             </a>
                         
                     </div>
@@ -427,8 +427,8 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/Windows/" class="post-category">
+                                Windows
                             </a>
                         
                     </div>
@@ -440,7 +440,7 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-17
+                    2023-11-18
                 </div>
                 
 
@@ -454,14 +454,14 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    4 分
                 </div>
                 
 
@@ -490,18 +490,34 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>python作为一门数据模型精心设计、具有高度一致性且十分具有哲学美感的编程语言，受到不同领域人士的喜爱。其庞大且活跃的开源社区、种类丰富的第三方包以及自带的功能强大的包管理工具更是锦上添花，让使用者可以用python解决各种门类的问题。</p>
-<p>python调用第三方包的方法十分简单，pip安装，然后在代码中import。但不知看观是否留心过，为什么python可以找到这些包，而自定义包却往往不可以直接import？而这问题的背后，就涉及到了python的包检索路径机制。在查阅了python的官方文档后，结合自己的经验和网络上其他python用户的分析，总算是大致弄清楚了python的包检索机制的来龙去脉，特此记录，留作分享与备忘。</p>
+<p>WSL是Windows Subsystem for Linux的缩写，即“适用于Linux的Windows子系统”。它可以使Windows系统不用安装虚拟机，也不用安装双系统，只要开启了WSL功能并下载安装一个Linux分发，即可使用Linux终端和vim等常用的Linux命令与工具。这种简洁、轻量的工具一向为我所青睐，因此在Windows工作本上一直使用WSL加VSCode进行Linux环境下的Python/Fortran/C/C++/Golang开发。</p>
+<p>最近需要在一台无法连网的Windows电脑上部署开发环境，WSL功能可以正常开启，然而Linux分发的安装上却遇到了难题，因为无论何种途径，Linux分发安装后均需要联网配置用户名和密码。后来了解到可以将连网电脑的WSL环境整体导出，再导入至不可连网的电脑中，不仅越过了Linux分发的安装问题，还省去了重新安装、配置各种工具的麻烦。在此，将WSL环境导入导出的过程以及期间遇到的问题及其解决方法进行梳理与记录。</p>
 </blockquote>
 <hr>
-<p>　　对python了解稍深入的同学应该知道，执行一个py文件时，所有的包检索路径均存储于python标准库“sys”中的一个名为“sys.path”的list对象里。“sys.path”在python解释器启动之后会完成初始化，初始化之后仍可修改，用户通过向“sys.path”中append自定义包的路径的方式，使对自定义包可被python检索。后者我们暂且不关心，着重分析python解释器初始化之后，用户未修改之前，“sys.path”中存放的包检索路径从何而来。<br>　　经分析，这些路径可分为四部分，下文将安装其在“sys.path”中的存放顺序一一说明。</p>
-<h2 id="1-脚本执行目录"><a href="#1-脚本执行目录" class="headerlink" title="1. 脚本执行目录"></a>1. 脚本执行目录</h2><p>　　“sys.path”中第一个路径是所执行的py文件所在的路径。若脚本是以交互式的方式在命令行一行一行输入执行的话，或者脚本获取自标准输入，则该路径记为空字符串。</p>
-<h2 id="2-PYTHONPATH环境变量"><a href="#2-PYTHONPATH环境变量" class="headerlink" title="2. PYTHONPATH环境变量"></a>2. PYTHONPATH环境变量</h2><p>　　“sys.path”中第二部分路径来自PYTHONPATH环境变量中的配置的路径。这部分可以没有（即不配置PYTHONPATH环境变量），也可以有多个，而且无论路径是否有效，均会存储于“sys.path”中。不少python使用者会将自己实现的包统一放在某个路径下，然后将该路径添加到PYTHONPATH环境变量中，这样无须每次向“sys.path”append也可使自定义包被检索到。</p>
-<h2 id="3-安装python时或创建虚拟环境时自动加入的路径"><a href="#3-安装python时或创建虚拟环境时自动加入的路径" class="headerlink" title="3. 安装python时或创建虚拟环境时自动加入的路径"></a>3. 安装python时或创建虚拟环境时自动加入的路径</h2><p>　　这一部分路径往往位于python安装路径或者虚拟环境所在的路径下。</p>
-<h2 id="4-标准库site增加的路径"><a href="#4-标准库site增加的路径" class="headerlink" title="4. 标准库site增加的路径"></a>4. 标准库site增加的路径</h2><p>　　这第四部分是最关键，也是最晦涩的。这些路径由“site.py”控制。“site.py”是python标准库中的一个包，在python解释器初始化的时候，“site包”一般会被自动导入。除非在执行脚本时使用解释器参数“-S”（即以“python -S test.py”的形式执行py文件），才可以关闭自动导入的行为。<code>（注：此处对于导入行为的描述以及下文对site包作用的描述均基于python 3.5及以上的版本）</code><br>　　“site包”导入后，会用“头部”和“尾部”拼接出几个路径，其中，“头部”来自“sys.prefix”和“sys.exec_prefix”两个位于标准库“sys”的对象中存储的非空的路径，这些路径一般与python安装路径或者虚拟环境所在路径有关；而“尾部”则是空字符串或者具有固定形式的字符串：“lib/site-packages” (Windows系统) 或“lib/pythonX.Y/site-packages” (Unix和macOS系统，其中“X.Y”为python版本号)。<br>　　看到这里，对python和pip较熟悉的看官可能已经恍然大悟了，“site包”与“site-packages”名字上的关联已经相当说明问题，因为通过pip管理的第三方包一般都存放在某个叫做“site-packages”的文件夹里！可以猜测，site正是对site-packages路径进行检索并加入“sys.path”中，从而使第三方包可以被成功检索和导入的关键所在。<br>　　说回上文，“site包”用“头部”和“尾部”拼接出几个路径之后，会逐个判断是否为实际有效的路径，若有效，则将该路径加入“sys.path”，并尝试读取该路径下的“路径配置文件”。所谓“路径配置文件”，其实就是这些“site-packages”路径下的“.pth”文件，其中或者包含一些import命令，或者包含一些路径。前者暂且不理会，我们主要关心后者。下图所示的是我的某个python虚拟环境中“site-packages”文件夹。<br><img src="/images/py_path/site-packages.png" width="500" height="300"><br>　　从图中可以看到，site-packages下有与一般pip安装的包不同的、以“egg”结尾的包，还有几个“.pth”文件，其中“easy-install.pth”中存放的正是这些以“egg”结尾的包的相对路径，每行一个。“site包”会判断这些相对路径所对应的文件或文件夹是否存在且未被添加至“sys.path”。若满足条件，则将其转换成绝对路径添加至“sys.path”。<br><img src="/images/py_path/pth.png" width="500" height="250"><br>　　那么，这些“.egg”包有什么特别的呢？原来与直接pip下载、安装的包不同，这些包是将源代码下载到本地后在本地构建和安装的，安装后也会被放置到“site-packages”文件夹下，并且路径会写入“easy-install.pth”文件，只有这样才能被pip管理（若把某个包的路径从“easy-install.pth”中删除，则“pip list”看不到这个包的信息）。另一方面，如果希望某个路径下的包可以被检索到，除了配置PYTHONPATH环境变量、向“sys.path”append外，也可以在“site-packages”下创建一个“.pth”文件，然后将包的绝对路径写入其中。<br>　　总之，“site包”是用于使“site-packages”中的包——无论是pip直接下载安装的，还是本地生成的——可以被正确检索和导入的。感兴趣的话可以做个实验，使用解释器参数“-S”执行一个调用了通过pip安装的包的脚本，会报错“ModuleNotFoundError:”</p>
-<hr>
-<hr>
-<p>　　综上所述，python解释器的包检索路径由四部分组成，其中第四部分与通过pip等方式安装的第三方包密切相关。python通过标准库“site包”对第三方包的检索路径进行了有效处理，与其强大的包管理工具相辅相成，这才令使用者方便快捷的使用众多第三方包。</p>
+<h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1. 环境"></a>1. 环境</h2><h3 id="1-1-可连网电脑"><a href="#1-1-可连网电脑" class="headerlink" title="1.1 可连网电脑"></a>1.1 可连网电脑</h3><p>　　Windows系统版本：win11<br>　　WSL版本：1<br>　　Linux分发：Ubuntu 20.04。6 LTS</p>
+<h3 id="1-2-不可连网电脑"><a href="#1-2-不可连网电脑" class="headerlink" title="1.2 不可连网电脑"></a>1.2 不可连网电脑</h3><p>　　Windows系统版本：win10（内部版本号低于WSL2最低安装要求）<br>　　WSL版本：1</p>
+<h2 id="2-WSL环境导出"><a href="#2-WSL环境导出" class="headerlink" title="2. WSL环境导出"></a>2. WSL环境导出</h2><p>　　首先，列出分发，确认要导出的环境对应的分发名称，命令为在powershell中执行：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">wsl <span class="token operator">-</span>l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>例如，我的连网电脑上输出如下：<br><img src="/images/WSL/wsl_l.jpg" width="300" height="100"><br>即我要导出的Linux分发名称是：Ubuntu-20.04。相应地，导出的方法为在powershell中执行：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">wsl <span class="token operator">--</span>export &lt;Distro&gt; &lt;FileName&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中，&lt;Distro&gt;为分发名称，例如上文中的“Ubuntu-20.04”。&lt;FileName&gt;为导出文件的路径和名称，例如“D:\Ubuntu-20.04.tar”。注意，导出的文件必须是“.tar”文件。导出文件的大小视WSL环境不同而不同，但一般比较大（可能有数个GB）。</p>
+<h2 id="3-WSL环境导入"><a href="#3-WSL环境导入" class="headerlink" title="3. WSL环境导入"></a>3. WSL环境导入</h2><p>　　首先，确认要导入的电脑里是否存在与待导入分发名称相同的分发（命令：wsl -l)。若有，则或者以其他名称导入分发，或者注销已有的分发并删除相应的文件系统，命令为：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">wsl <span class="token operator">--</span>unregister &lt;Distro&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中，&lt;Distro&gt;为待注销的分发名称。</p>
+<p>　　从“.tar”文件中导入分发的命令为：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">wsl <span class="token operator">--</span>import &lt;Distro&gt; &lt;InstallLocation&gt; &lt;FileName&gt; <span class="token operator">--</span>version &lt;Version&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中，&lt;Distro&gt;为导入的分发名称，&lt;InstallLocation&gt;是分发导入后的安装位置，&lt;FileName&gt;是用于导入的“.tar”文件路径与名称，&lt;Version&gt;是为分发使用的WSL版本。等待一段时间后，WSL环境就导入完毕了。</p>
+<h2 id="4-登录用户设置"><a href="#4-登录用户设置" class="headerlink" title="4. 登录用户设置"></a>4. 登录用户设置</h2><p>　　WSL环境导入后，默认以root用户登录，如下图所示：<br><img src="/images/WSL/root.jpg" width="400" height="50"><br>但以root用户登录会导致之前安装的python、gcc和go等软件或者其他工具无法正常使用，因此需要设置为以原来的用户名登录。默认用户的设置，网上很多相关的回答给出的方法都是通过“ubuntu.exe –config”命令配置默认登录用户，但该方法仅限于可以连网安装Linux分发的情况，对于导入分发的情形，根本没有“ubuntu.exe”程序。</p>
+<p>　　对于无法连网的电脑而言，正确的方法是修改注册表。<br>　　首先，需要确认待设置用户的UID。进入导入的WSL环境，打开终端，执行如下命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /etc/passwd <span class="token operator">|</span> <span class="token function">grep</span> <span class="token operator">&lt;</span>UserName<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中，&lt;UserName&gt;为待设置的用户名。执行命令后，可得到类似于下图所示的输出：<br><img src="/images/WSL/passwd.jpg" width="600" height="100"><br>用户名后边的数字就是Uid，即上图中与”yorick”用户对应的Uid是1000。</p>
+<p>　　然后，打开注册表编辑器，找到“\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\”，“Lxss”下可能有一项或多项，分别对应不同的分发，找到导入的分发所对应的项，修改“DefaultUid”的值为用户名Uid，如下图所示。注意，选中十进制后再填入Uid。<br><img src="/images/WSL/regedit.jpg" width="600" height="300"></p>
+<p>　　注册表修改完毕后，再启动WSL终端，可以看到登录用户已不再是root。至此，完成了连网电脑中的WSL环境向不可连网电脑中迁移、配置的全部操作，在不可连网的电脑中，WSL可像原来一样使用。<br><img src="/images/WSL/yorick.jpg" width="400" height="10"></p>
 
                 
             </div>
@@ -528,7 +544,7 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://xunhou0222.github.io/2023/11/17/python-de-bao-jian-suo-ji-zhi/">http://xunhou0222.github.io/2023/11/17/python-de-bao-jian-suo-ji-zhi/</a>
+                    <a href="http://xunhou0222.github.io/2023/11/18/wsl-huan-jing-qian-yi/">http://xunhou0222.github.io/2023/11/18/wsl-huan-jing-qian-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -566,12 +582,12 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/WSL/">
+                                    <span class="chip bg-color">WSL</span>
                                 </a>
                             
-                                <a href="/tags/pip/">
-                                    <span class="chip bg-color">pip</span>
+                                <a href="/tags/Windows/">
+                                    <span class="chip bg-color">Windows</span>
                                 </a>
                             
                         </div>
@@ -742,7 +758,7 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
         repo: 'xunhou0222.github.io',
         owner: 'xunhou0222',
         admin: "xunhou0222",
-        id: '2023-11-17T23-03-29',
+        id: '2023-11-18T11-46-04',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1043,7 +1059,61 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2023/11/17/python-de-bao-jian-suo-ji-zhi/">
+                <a href="/2023/11/18/wsl-huan-jing-qian-yi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="WSL环境迁移">
+                        
+                        <span class="card-title">WSL环境迁移</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Windows/" class="post-category">
+                                    Windows
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/WSL/">
+                        <span class="chip bg-color">WSL</span>
+                    </a>
+                    
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/11/17/python-de-bao-jian-suo-ji-zhi-fen-xi/">
                     <div class="card-image">
                         
                         
@@ -1074,7 +1144,6 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1084,59 +1153,6 @@ python作为一门数据模型精心设计、具有高度一致性且十分具�
                     
                     <a href="/tags/pip/">
                         <span class="chip bg-color">pip</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/11/17/fu-wu-qi-miniconda-huan-jing-da-jian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="服务器Miniconda环境搭建">
-                        
-                        <span class="card-title">服务器Miniconda环境搭建</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/conda/" class="post-category">
-                                    conda
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Miniconda/">
-                        <span class="chip bg-color">Miniconda</span>
-                    </a>
-                    
-                    <a href="/tags/conda/">
-                        <span class="chip bg-color">conda</span>
                     </a>
                     
                 </div>
